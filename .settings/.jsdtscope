@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="box2d/examples/model"/>
+	<classpathentry excluding="demos/" kind="src" path="box2d/examples/retained"/>
+	<classpathentry kind="src" path="box2d/examples/retained/demos"/>
+	<classpathentry excluding="box2d/collision/|box2d/common/|box2d/collision/shapes/|retained/|data/|box2d/dynamics/joints/|box2d/dynamics/contacts/|box2d/dynamics/|qr/" kind="src" path="box2d/src"/>
+	<classpathentry excluding="shapes/" kind="src" path="box2d/src/box2d/collision"/>
+	<classpathentry kind="src" path="box2d/src/box2d/collision/shapes"/>
+	<classpathentry kind="src" path="box2d/src/box2d/common"/>
+	<classpathentry excluding="joints/|contacts/" kind="src" path="box2d/src/box2d/dynamics"/>
+	<classpathentry kind="src" path="box2d/src/box2d/dynamics/contacts"/>
+	<classpathentry kind="src" path="box2d/src/box2d/dynamics/joints"/>
+	<classpathentry kind="src" path="box2d/src/data"/>
+	<classpathentry kind="src" path="box2d/src/qr"/>
+	<classpathentry kind="src" path="box2d/src/retained"/>
+	<classpathentry kind="src" path="box2d/test"/>
+	<classpathentry excluding="closure/goog/debug/|closure/goog/debug/devcss/|closure/goog/vec/|closure/goog/labs/testing/|closure/goog/math/interpolator/|closure/goog/testing/storage/|closure/goog/dom/browserrange/|closure/goog/bootstrap/|closure/goog/date/|closure/goog/demos/tree/|closure/goog/locale/|closure/goog/dom/|closure/goog/useragent/|closure/goog/testing/messaging/|closure/goog/ui/emoji/|closure/goog/net/|closure/goog/testing/editor/|closure/goog/datasource/|closure/goog/reflect/|closure/goog/functions/|third_party/closure/goog/|closure/goog/editor/plugins/|third_party/closure/goog/dojo/dom/|closure/goog/testing/proto2/|closure/goog/proto2/|closure/goog/graphics/ext/|closure/goog/ui/media/|closure/goog/labs/object/|closure/goog/format/|closure/goog/ui/tree/|closure/goog/labs/net/|closure/goog/window/|closure/goog/testing/ui/|third_party/closure/goog/caja/string/html/|closure/goog/tweak/|closure/goog/async/|closure/goog/fs/|closure/goog/testing/benchmarks/|closure/goog/testing/async/|closure/goog/labs/classdef/|closure/goog/math/|closure/goog/fx/|closure/goog/ui/ac/|closure/goog/webgl/|closure/goog/pubsub/|third_party/closure/goog/mochikit/async/|closure/goog/testing/events/|closure/goog/ui/editor/|closure/goog/editor/|closure/goog/proto/|closure/goog/events/|closure/goog/array/|closure/goog/ui/|closure/goog/cssom/|closure/goog/graphics/|closure/goog/crypt/|closure/goog/i18n/uchar/|third_party/closure/goog/jpeg_encoder/|closure/goog/dom/pattern/|closure/goog/uri/|closure/goog/json/|closure/goog/testing/net/|closure/goog/demos/graphics/|closure/goog/labs/observe/|closure/goog/fx/anim/|closure/goog/result/|closure/goog/timer/|closure/goog/testing/|closure/goog/testing/fs/|closure/goog/db/|closure/goog/color/|closure/goog/structs/|closure/goog/module/|closure/goog/storage/|closure/goog/iter/|third_party/closure/goog/silverlight/|closure/goog/gears/|closure/goog/spell/|closure/goog/positioning/|closure/goog/object/|closure/goog/dom/pattern/callback/|third_party/closure/goog/osapi/|closure/goog/i18n/|closure/goog/disposable/|closure/goog/demos/|third_party/closure/goog/loremipsum/text/|closure/goog/labs/mock/|closure/goog/|closure/goog/testing/style/|closure/goog/net/xpc/|closure/goog/messaging/testdata/|closure/goog/style/|closure/goog/demos/xpc/|closure/goog/storage/mechanism/|closure/goog/stats/|closure/goog/ui/style/app/|closure/goog/net/testdata/|closure/goog/memoize/|closure/goog/demos/editor/|closure/goog/asserts/|closure/goog/labs/structs/|closure/goog/cssom/iframe/|closure/goog/ui/equation/|closure/goog/history/|closure/goog/string/|closure/goog/module/testdata/|closure/goog/soy/|closure/goog/messaging/|closure/goog/fx/css3/" kind="src" path="closure"/>
+	<classpathentry excluding="debug/|debug/devcss/|vec/|labs/testing/|math/interpolator/|testing/storage/|dom/browserrange/|bootstrap/|date/|demos/tree/|locale/|dom/|useragent/|testing/messaging/|ui/emoji/|net/|testing/editor/|datasource/|reflect/|functions/|editor/plugins/|testing/proto2/|proto2/|graphics/ext/|ui/media/|labs/object/|format/|ui/tree/|labs/net/|window/|testing/ui/|tweak/|async/|fs/|testing/benchmarks/|testing/async/|labs/classdef/|math/|fx/|ui/ac/|webgl/|pubsub/|testing/events/|ui/editor/|editor/|proto/|events/|array/|ui/|cssom/|graphics/|crypt/|i18n/uchar/|dom/pattern/|uri/|json/|testing/net/|demos/graphics/|labs/observe/|fx/anim/|result/|timer/|testing/|testing/fs/|db/|color/|structs/|module/|storage/|iter/|gears/|spell/|positioning/|object/|dom/pattern/callback/|i18n/|disposable/|demos/|labs/mock/|testing/style/|net/xpc/|messaging/testdata/|style/|demos/xpc/|storage/mechanism/|stats/|ui/style/app/|net/testdata/|memoize/|demos/editor/|asserts/|labs/structs/|cssom/iframe/|ui/equation/|history/|string/|module/testdata/|soy/|messaging/|fx/css3/" kind="src" path="closure/closure/goog"/>
+	<classpathentry kind="src" path="closure/closure/goog/array"/>
+	<classpathentry kind="src" path="closure/closure/goog/asserts"/>
+	<classpathentry kind="src" path="closure/closure/goog/async"/>
+	<classpathentry kind="src" path="closure/closure/goog/bootstrap"/>
+	<classpathentry kind="src" path="closure/closure/goog/color"/>
+	<classpathentry kind="src" path="closure/closure/goog/crypt"/>
+	<classpathentry excluding="iframe/" kind="src" path="closure/closure/goog/cssom"/>
+	<classpathentry kind="src" path="closure/closure/goog/cssom/iframe"/>
+	<classpathentry kind="src" path="closure/closure/goog/datasource"/>
+	<classpathentry kind="src" path="closure/closure/goog/date"/>
+	<classpathentry kind="src" path="closure/closure/goog/db"/>
+	<classpathentry excluding="devcss/" kind="src" path="closure/closure/goog/debug"/>
+	<classpathentry kind="src" path="closure/closure/goog/debug/devcss"/>
+	<classpathentry excluding="tree/|graphics/|xpc/|editor/" kind="src" path="closure/closure/goog/demos"/>
+	<classpathentry kind="src" path="closure/closure/goog/demos/editor"/>
+	<classpathentry kind="src" path="closure/closure/goog/demos/graphics"/>
+	<classpathentry kind="src" path="closure/closure/goog/demos/tree"/>
+	<classpathentry kind="src" path="closure/closure/goog/demos/xpc"/>
+	<classpathentry kind="src" path="closure/closure/goog/disposable"/>
+	<classpathentry excluding="browserrange/|pattern/|pattern/callback/" kind="src" path="closure/closure/goog/dom"/>
+	<classpathentry kind="src" path="closure/closure/goog/dom/browserrange"/>
+	<classpathentry excluding="callback/" kind="src" path="closure/closure/goog/dom/pattern"/>
+	<classpathentry kind="src" path="closure/closure/goog/dom/pattern/callback"/>
+	<classpathentry excluding="plugins/" kind="src" path="closure/closure/goog/editor"/>
+	<classpathentry kind="src" path="closure/closure/goog/editor/plugins"/>
+	<classpathentry kind="src" path="closure/closure/goog/events"/>
+	<classpathentry kind="src" path="closure/closure/goog/format"/>
+	<classpathentry kind="src" path="closure/closure/goog/fs"/>
+	<classpathentry kind="src" path="closure/closure/goog/functions"/>
+	<classpathentry excluding="anim/|css3/" kind="src" path="closure/closure/goog/fx"/>
+	<classpathentry kind="src" path="closure/closure/goog/fx/anim"/>
+	<classpathentry kind="src" path="closure/closure/goog/fx/css3"/>
+	<classpathentry kind="src" path="closure/closure/goog/gears"/>
+	<classpathentry excluding="ext/" kind="src" path="closure/closure/goog/graphics"/>
+	<classpathentry kind="src" path="closure/closure/goog/graphics/ext"/>
+	<classpathentry kind="src" path="closure/closure/goog/history"/>
+	<classpathentry excluding="uchar/" kind="src" path="closure/closure/goog/i18n"/>
+	<classpathentry kind="src" path="closure/closure/goog/i18n/uchar"/>
+	<classpathentry kind="src" path="closure/closure/goog/iter"/>
+	<classpathentry kind="src" path="closure/closure/goog/json"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/classdef"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/mock"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/net"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/object"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/observe"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/structs"/>
+	<classpathentry kind="src" path="closure/closure/goog/labs/testing"/>
+	<classpathentry kind="src" path="closure/closure/goog/locale"/>
+	<classpathentry excluding="interpolator/" kind="src" path="closure/closure/goog/math"/>
+	<classpathentry kind="src" path="closure/closure/goog/math/interpolator"/>
+	<classpathentry kind="src" path="closure/closure/goog/memoize"/>
+	<classpathentry excluding="testdata/" kind="src" path="closure/closure/goog/messaging"/>
+	<classpathentry kind="src" path="closure/closure/goog/messaging/testdata"/>
+	<classpathentry excluding="testdata/" kind="src" path="closure/closure/goog/module"/>
+	<classpathentry kind="src" path="closure/closure/goog/module/testdata"/>
+	<classpathentry excluding="xpc/|testdata/" kind="src" path="closure/closure/goog/net"/>
+	<classpathentry kind="src" path="closure/closure/goog/net/testdata"/>
+	<classpathentry kind="src" path="closure/closure/goog/net/xpc"/>
+	<classpathentry kind="src" path="closure/closure/goog/object"/>
+	<classpathentry kind="src" path="closure/closure/goog/positioning"/>
+	<classpathentry kind="src" path="closure/closure/goog/proto"/>
+	<classpathentry kind="src" path="closure/closure/goog/proto2"/>
+	<classpathentry kind="src" path="closure/closure/goog/pubsub"/>
+	<classpathentry kind="src" path="closure/closure/goog/reflect"/>
+	<classpathentry kind="src" path="closure/closure/goog/result"/>
+	<classpathentry kind="src" path="closure/closure/goog/soy"/>
+	<classpathentry kind="src" path="closure/closure/goog/spell"/>
+	<classpathentry kind="src" path="closure/closure/goog/stats"/>
+	<classpathentry excluding="mechanism/" kind="src" path="closure/closure/goog/storage"/>
+	<classpathentry kind="src" path="closure/closure/goog/storage/mechanism"/>
+	<classpathentry kind="src" path="closure/closure/goog/string"/>
+	<classpathentry kind="src" path="closure/closure/goog/structs"/>
+	<classpathentry kind="src" path="closure/closure/goog/style"/>
+	<classpathentry excluding="storage/|messaging/|editor/|proto2/|ui/|benchmarks/|async/|events/|net/|fs/|style/" kind="src" path="closure/closure/goog/testing"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/async"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/benchmarks"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/editor"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/events"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/fs"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/messaging"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/net"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/proto2"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/storage"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/style"/>
+	<classpathentry kind="src" path="closure/closure/goog/testing/ui"/>
+	<classpathentry kind="src" path="closure/closure/goog/timer"/>
+	<classpathentry kind="src" path="closure/closure/goog/tweak"/>
+	<classpathentry excluding="emoji/|media/|tree/|ac/|editor/|style/app/|equation/" kind="src" path="closure/closure/goog/ui"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/ac"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/editor"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/emoji"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/equation"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/media"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/style/app"/>
+	<classpathentry kind="src" path="closure/closure/goog/ui/tree"/>
+	<classpathentry kind="src" path="closure/closure/goog/uri"/>
+	<classpathentry kind="src" path="closure/closure/goog/useragent"/>
+	<classpathentry kind="src" path="closure/closure/goog/vec"/>
+	<classpathentry kind="src" path="closure/closure/goog/webgl"/>
+	<classpathentry kind="src" path="closure/closure/goog/window"/>
+	<classpathentry excluding="dojo/dom/|caja/string/html/|mochikit/async/|jpeg_encoder/|silverlight/|osapi/|loremipsum/text/" kind="src" path="closure/third_party/closure/goog"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/caja/string/html"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/dojo/dom"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/jpeg_encoder"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/loremipsum/text"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/mochikit/async"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/osapi"/>
+	<classpathentry kind="src" path="closure/third_party/closure/goog/silverlight"/>
+	<classpathentry kind="src" path="demo"/>
+	<classpathentry kind="src" path="lime/css"/>
+	<classpathentry excluding="compiled/" kind="src" path="lime/demos/pong"/>
+	<classpathentry kind="src" path="lime/demos/pong/compiled"/>
+	<classpathentry excluding="compiled/" kind="src" path="lime/demos/roundball"/>
+	<classpathentry kind="src" path="lime/demos/roundball/compiled"/>
+	<classpathentry excluding="assets/|assets/spinner/" kind="src" path="lime/demos/tests"/>
+	<classpathentry excluding="spinner/" kind="src" path="lime/demos/tests/assets"/>
+	<classpathentry kind="src" path="lime/demos/tests/assets/spinner"/>
+	<classpathentry excluding="compiled/" kind="src" path="lime/demos/zlizer"/>
+	<classpathentry kind="src" path="lime/demos/zlizer/compiled"/>
+	<classpathentry excluding="helper/parser/|ui/|transitions/|shape/|fill/|customnodes/|audio/|helper/|events/|animation/|renderer/" kind="src" path="lime/src"/>
+	<classpathentry kind="src" path="lime/src/animation"/>
+	<classpathentry kind="src" path="lime/src/audio"/>
+	<classpathentry kind="src" path="lime/src/customnodes"/>
+	<classpathentry kind="src" path="lime/src/events"/>
+	<classpathentry kind="src" path="lime/src/fill"/>
+	<classpathentry excluding="parser/" kind="src" path="lime/src/helper"/>
+	<classpathentry kind="src" path="lime/src/helper/parser"/>
+	<classpathentry kind="src" path="lime/src/renderer"/>
+	<classpathentry kind="src" path="lime/src/shape"/>
+	<classpathentry kind="src" path="lime/src/transitions"/>
+	<classpathentry kind="src" path="lime/src/ui"/>
+	<classpathentry kind="src" path="lime/templates/default"/>
+	<classpathentry kind="src" path="spider"/>
+	<classpathentry excluding="box2d/examples/model/|box2d/examples/retained/|box2d/examples/retained/demos/|box2d/src/|box2d/src/box2d/collision/|box2d/src/box2d/collision/shapes/|box2d/src/box2d/common/|box2d/src/box2d/dynamics/|box2d/src/box2d/dynamics/contacts/|box2d/src/box2d/dynamics/joints/|box2d/src/data/|box2d/src/qr/|box2d/src/retained/|box2d/test/|closure/|closure/closure/goog/|closure/closure/goog/array/|closure/closure/goog/asserts/|closure/closure/goog/async/|closure/closure/goog/bootstrap/|closure/closure/goog/color/|closure/closure/goog/crypt/|closure/closure/goog/cssom/|closure/closure/goog/cssom/iframe/|closure/closure/goog/datasource/|closure/closure/goog/date/|closure/closure/goog/db/|closure/closure/goog/debug/|closure/closure/goog/debug/devcss/|closure/closure/goog/demos/|closure/closure/goog/demos/editor/|closure/closure/goog/demos/graphics/|closure/closure/goog/demos/tree/|closure/closure/goog/demos/xpc/|closure/closure/goog/disposable/|closure/closure/goog/dom/|closure/closure/goog/dom/browserrange/|closure/closure/goog/dom/pattern/|closure/closure/goog/dom/pattern/callback/|closure/closure/goog/editor/|closure/closure/goog/editor/plugins/|closure/closure/goog/events/|closure/closure/goog/format/|closure/closure/goog/fs/|closure/closure/goog/functions/|closure/closure/goog/fx/|closure/closure/goog/fx/anim/|closure/closure/goog/fx/css3/|closure/closure/goog/gears/|closure/closure/goog/graphics/|closure/closure/goog/graphics/ext/|closure/closure/goog/history/|closure/closure/goog/i18n/|closure/closure/goog/i18n/uchar/|closure/closure/goog/iter/|closure/closure/goog/json/|closure/closure/goog/labs/classdef/|closure/closure/goog/labs/mock/|closure/closure/goog/labs/net/|closure/closure/goog/labs/object/|closure/closure/goog/labs/observe/|closure/closure/goog/labs/structs/|closure/closure/goog/labs/testing/|closure/closure/goog/locale/|closure/closure/goog/math/|closure/closure/goog/math/interpolator/|closure/closure/goog/memoize/|closure/closure/goog/messaging/|closure/closure/goog/messaging/testdata/|closure/closure/goog/module/|closure/closure/goog/module/testdata/|closure/closure/goog/net/|closure/closure/goog/net/testdata/|closure/closure/goog/net/xpc/|closure/closure/goog/object/|closure/closure/goog/positioning/|closure/closure/goog/proto/|closure/closure/goog/proto2/|closure/closure/goog/pubsub/|closure/closure/goog/reflect/|closure/closure/goog/result/|closure/closure/goog/soy/|closure/closure/goog/spell/|closure/closure/goog/stats/|closure/closure/goog/storage/|closure/closure/goog/storage/mechanism/|closure/closure/goog/string/|closure/closure/goog/structs/|closure/closure/goog/style/|closure/closure/goog/testing/|closure/closure/goog/testing/async/|closure/closure/goog/testing/benchmarks/|closure/closure/goog/testing/editor/|closure/closure/goog/testing/events/|closure/closure/goog/testing/fs/|closure/closure/goog/testing/messaging/|closure/closure/goog/testing/net/|closure/closure/goog/testing/proto2/|closure/closure/goog/testing/storage/|closure/closure/goog/testing/style/|closure/closure/goog/testing/ui/|closure/closure/goog/timer/|closure/closure/goog/tweak/|closure/closure/goog/ui/|closure/closure/goog/ui/ac/|closure/closure/goog/ui/editor/|closure/closure/goog/ui/emoji/|closure/closure/goog/ui/equation/|closure/closure/goog/ui/media/|closure/closure/goog/ui/style/app/|closure/closure/goog/ui/tree/|closure/closure/goog/uri/|closure/closure/goog/useragent/|closure/closure/goog/vec/|closure/closure/goog/webgl/|closure/closure/goog/window/|closure/third_party/closure/goog/|closure/third_party/closure/goog/caja/string/html/|closure/third_party/closure/goog/dojo/dom/|closure/third_party/closure/goog/jpeg_encoder/|closure/third_party/closure/goog/loremipsum/text/|closure/third_party/closure/goog/mochikit/async/|closure/third_party/closure/goog/osapi/|closure/third_party/closure/goog/silverlight/|demo/|lime/css/|lime/demos/pong/|lime/demos/pong/compiled/|lime/demos/roundball/|lime/demos/roundball/compiled/|lime/demos/tests/|lime/demos/tests/assets/|lime/demos/tests/assets/spinner/|lime/demos/zlizer/|lime/demos/zlizer/compiled/|lime/src/|lime/src/animation/|lime/src/audio/|lime/src/customnodes/|lime/src/events/|lime/src/fill/|lime/src/helper/|lime/src/helper/parser/|lime/src/renderer/|lime/src/shape/|lime/src/transitions/|lime/src/ui/|lime/templates/default/|spider/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.USER_LIBRARY/limejs"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.USER_LIBRARY/box2d"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.USER_LIBRARY/closure"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

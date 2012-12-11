@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>ping</title>
+	<script type="text/javascript" src="../closure/closure/goog/base.js"></script>
+	<script type="text/javascript" src="jquery-latest.js"></script>
+	<script type="text/javascript" src="ping.js"></script>
+</head>
+
+<body onload="ping.start()"></body>
+
+</html>

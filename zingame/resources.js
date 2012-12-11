@@ -59,6 +59,11 @@ zingame.Resources.listFileName = [
                                 'assets/cards/9_spade.png',
                                 'assets/cards/Back.png',
                                 'assets/background/Background.png',
+                                'assets/background/profile_bg.png',
+                                'assets/icon/ava_default.png',
+                                'assets/icon/dealer.png',
+                                'assets/icon/chat.png',
+                                'assets/icon/all.png',
                                 ];
 zingame.Resources.percentage = 0;
 zingame.Resources.listName = [];

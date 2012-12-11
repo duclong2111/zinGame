@@ -127,7 +127,7 @@ lime.Director = function(parentElement, opt_width, opt_height) {
 
     goog.events.listen(this, ['touchmove','touchstart'],
         function(e) {e.event.preventDefault();}, false, this);
-
+        
     // todo: check if all those are really neccessary as Event code
     // is much more mature now
     goog.events.listen(this, ['mouseup', 'touchend', 'mouseout', 'touchcancel'],
@@ -143,6 +143,16 @@ lime.Director = function(parentElement, opt_width, opt_height) {
 };
 goog.inherits(lime.Director, lime.Node);
 
+/**
+ * disposeTransition
+ * #20120406 trungnb
+ */
+lime.Director.prototype.disposeTransition = function() {
+    goog.events.removeAll(this.transition);
+    this.transition.dispose();
+    this.transition = null;
+    
+}
 
 /**
  * Milliseconds between recalculating FPS value
@@ -228,6 +238,19 @@ lime.Director.prototype.setDisplayFPS = function(value) {
     return this;
 };
 
+lime.Director.prototype.setDisplayMousePos = function(value) {
+    if (value) {
+        this.mousePos_ = goog.dom.createDom('div');
+        goog.style.installStyles('.lime-mouse-pos {float: right; background: #333; color: #fff; position: absolute; top:0px; right: 0px;}');
+        goog.dom.classes.add(this.mousePos_, goog.getCssName('lime-mouse-pos'));
+        this.domElement.parentNode.appendChild(this.mousePos_);
+
+        goog.events.listen(this, 'mousemove', function(e) {
+            goog.dom.setTextContent(this.mousePos_, 'X:' + parseInt(e.position.x) + ' Y:' + parseInt(e.position.y));
+        }, false, this);
+    }
+    return this;
+};
 
 /**
  * Get current active scene
@@ -260,7 +283,16 @@ lime.Director.prototype.step_ = function(delta) {
         this.accumDt_ += delta;
         if (this.accumDt_ > lime.Director.FPS_INTERVAL) {
             this.fps = ((1000 * this.frames_) / this.accumDt_);
-            goog.dom.setTextContent(this.fpsElement_, this.fps.toFixed(2));
+//            goog.dom.setTextContent(this.fpsElement_, this.fps.toFixed(0));
+            //----begin
+            var text = this.fps.toFixed(0);
+            if(goog.isDef(lime.scheduleManager.taskStack_))
+                text += 'T:'+lime.scheduleManager.taskStack_.length;
+            if(goog.isDef(goog.events.listeners_))
+                text += 'L:'+goog.events.getTotalListenerCount();
+//                text += 'L:'+countObject(goog.events.listeners_);*/
+            goog.dom.setTextContent(this.fpsElement_, text);
+            //----end
             this.frames_ = 0;
             this.accumDt_ = 0;
         }
@@ -303,23 +335,21 @@ lime.Director.prototype.replaceScene = function(scene, opt_transition,
     scene.parent_ = this;
     scene.wasAddedToTree();
 
-    var transition = new transitionclass(outgoing, scene);
+    this.transition = new transitionclass(outgoing, scene);
         
-    goog.events.listenOnce(transition,'end',function() {
+    goog.events.listen(this.transition,'end',function() {
             var i = removelist.length;
             while (--i >= 0) {
                 goog.dom.removeNode(removelist[i]);
             }
-            removelist.length = 0;
-            
         },false,this);
 
     if (goog.isDef(opt_duration)) {
-        transition.setDuration(opt_duration);
+        this.transition.setDuration(opt_duration);
     }
 
-    transition.start();
-    return transition;
+    this.transition.start();
+    return this.transition;
 
 };
 
@@ -332,70 +362,28 @@ lime.Director.prototype.updateLayout = function() {
 /**
  * Push scene to the top of scene stack
  * @param {lime.Scene} scene New scene.
- * @param {function(lime.Scene,lime.Scene,boolean=)=} opt_transition Transition played.
- * @param {number=} opt_duration Duration of transition.
- * @return Transition object if opt_transition is defined
  */
-lime.Director.prototype.pushScene = function(scene, opt_transition, opt_duration) {
-    var transition, outgoing;
-
-    scene.setSize(this.getSize().clone());
-
-    if (goog.isDef(opt_transition) && this.sceneStack_.length) {
-        outgoing = this.sceneStack_[this.sceneStack_.length - 1];
-        transition = new opt_transition(outgoing, scene);
-
-        if (goog.isDef(opt_duration)) {
-            transition.setDuration(opt_duration);
-        }
-        scene.domElement.style['display'] = 'none';
-    }
+lime.Director.prototype.pushScene = function(scene) {
+	scene.setSize(this.getSize().clone());
     this.sceneStack_.push(scene);
     this.domElement.appendChild(scene.domElement);
     scene.parent_ = this;
     scene.wasAddedToTree();
 
-    if (transition) {
-        transition.start();
-        return transition;
-    }
 };
 
 
 /**
  * Remove current scene from the stack
- * @param {function(lime.Scene,lime.Scene,boolean=)=} opt_transition Transition played.
- * @param {number=} opt_duration Duration of transition.
- * @return Transition object if opt_transition is defined
  */
-lime.Director.prototype.popScene = function(opt_transition, opt_duration) {
-    var transition, 
-      outgoing = this.getCurrentScene();
-      
-    if (goog.isNull(outgoing)) return;
-    
-    var popOutgoing = function() {
-        outgoing.wasRemovedFromTree();
-        outgoing.parent_ = null;
-        goog.dom.removeNode(outgoing.domElement);
-        this.sceneStack_.pop();
-        outgoing = null; // GC
-    };
-    // Transitions require an existing incoming scene
-    if (goog.isDef(opt_transition) && (this.sceneStack_.length > 1)) {
-        transition = new opt_transition(outgoing, this.sceneStack_[this.sceneStack_.length - 2]);
-      
-        if (goog.isDef(opt_duration)) {
-            transition.setDuration(opt_duration);
-        }
-        goog.events.listenOnce(transition, 'end', popOutgoing, false, this);
-    } else {
-        popOutgoing.call(this);
-    }
-    if (transition) {
-        transition.start();
-        return transition;
-    }
+lime.Director.prototype.popScene = function() {
+    if (!this.sceneStack_.length) return;
+    this.sceneStack_[this.sceneStack_.length - 1].wasRemovedFromTree();
+    this.sceneStack_[this.sceneStack_.length - 1].parent_ = null;
+    goog.dom.removeNode(
+        this.sceneStack_[this.sceneStack_.length - 1].domElement);
+    this.sceneStack_.pop();
+
 };
 
 
@@ -508,6 +496,17 @@ lime.Director.prototype.invalidateSize_ = function() {
         if (goog.isNumber(window.innerHeight)) {
             stageSize.height = window.innerHeight;
         }
+        if (goog.isNumber(window.innerWidth)) {
+            stageSize.width = window.innerWidth;
+        }
+    }
+    
+//    ------- Xem lai width & height cua ban tren android ----------
+    if ((/(android|silk)/i).test(navigator.userAgent)) { //add silk for kindle fire
+        if($(window).width() && $(window).height()){
+            stageSize.width = $(window).width();
+            stageSize.height = $(window).height();
+        }
     }
 
     var realSize = this.getSize().clone().scaleToFit(stageSize);
@@ -552,16 +551,17 @@ lime.Director.prototype.makeMobileWebAppCapable = function() {
     document.getElementsByTagName('head').item(0).appendChild(meta);
 
     var visited = false;
-    if (goog.isDef(localStorage)) {
-        visited = localStorage.getItem('_lime_visited');
+    if (typeof(localStorage) != 'undefined') {
+        if (localStorage != null)
+            visited = localStorage.getItem('_lime_visited');
     }
 
     var ios = (/(ipod|iphone|ipad)/i).test(navigator.userAgent);
     if (ios && !window.navigator.standalone && COMPILED && !visited && this.domElement.parentNode==document.body) {
-        alert('Please install this page as a web app by ' +
-            'clicking Share + Add to home screen.');
-        if (goog.isDef(localStorage)) {
-           localStorage.setItem('_lime_visited', true);
+        //alert('Please install this page as a web app by ' + 'clicking Share + Add to home screen.');
+        if (typeof(localStorage) != 'undefined') {
+            if (localStorage != null)
+                localStorage.setItem('_lime_visited', true);
         }
     }
 

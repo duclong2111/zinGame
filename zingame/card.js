@@ -1,19 +1,18 @@
 goog.provide('zingame.Card');
 
 goog.require('lime.RoundedRect');
-goog.require('lime.Sprite');
 
 zingame.Card = function(rank, suit) {
-  goog.base(this);
+  lime.RoundedRect.call(this);
 
   // bai up hay ngua
-  var status = false;
+  this.status = false;
   /*
    * gia tri quan bai bao gom thu tu va do uu tien order : 3 - 15 ~ 3 4 5 6 7 8
    * 9 10 J Q K A 2 priority: 1-4 ~ bich nhep ro co
    */
-  var suit = suit;
-  var rank = rank;
+  this.suit = suit;
+  this.rank = rank;
 
   //var height = zingame.Constants.CARD_HEIGHT;
   //var width = zingame.Constants.CARD_WIDTH;
@@ -31,45 +30,17 @@ zingame.Card = function(rank, suit) {
    * zingame.Constants.CARD_PRIORITY[this.priority] + ".png"; if (this.status)
    * this.sprite.setFill(img); else this.sprite.setFill('#f0f');
    */
-  this.qualityRenderer = true;
   
-  this.getSuit = function(){return suit;};
-  
-  this.getRank = function(){return rank;};
-  
-  this.getSelect = function(){
-    return this.select_;
-  };
-  /*
-  this.setSelect = function(){
-    if(select_)
-    select_ = false;
-  };
-  */
-  this.select = function() {
-	  if (this.select_ == false) {
-	    this.select_ = true;
-	    var pos = this.getPosition();
-	    this.setPosition(pos.x, pos.y - 30);
-	  } 
-	  else {
-	    this.select_ = false;
-	    var pos = this.getPosition();
-	    this.setPosition(pos.x, pos.y + 30);
-
-	  }
-	};
-	
 };
-goog.inherits(zingame.Card, lime.Sprite);
+goog.inherits(zingame.Card, lime.RoundedRect);
 
-//zingame.Card.prototype.getSuit = function() {
-//  return suit;
-//};
-/*
+zingame.Card.prototype.getSuit = function() {
+  return this.suit;
+};
+
 zingame.Card.prototype.getRank = function() {
-  return rank;
-};*/
+  return this.rank;
+};
 /*
  * zingame.Card.prototype.setCardPosition = function(x, y) { this.CoordinateX =
  * x; this.CoordinateY = y; };
@@ -83,26 +54,24 @@ zingame.Card.prototype.setStatus = function(stt) {
   else
     sprite.setFill('#f0f');
 };
-
+*/
 zingame.Card.prototype.select = function() {
-  if (select_) {
-    select_ = false;
+  if (this.select_) {
+    this.select_ = false;
     var pos = this.getPosition();
-    this.setPosition(pos.x, pos.y - 40);
+    this.setPosition(pos.x, pos.y + zingame.Constants.CARD_SELECT);
   } 
   else {
-    select_ = true;
+    this.select_ = true;
     var pos = this.getPosition();
-    this.setPosition(pos.x, pos.y + 40);
-
+    this.setPosition(pos.x, pos.y - zingame.Constants.CARD_SELECT);
   }
+  return this;
 };
-*/
-zingame.Card.fill = function(rank, suit) {
-  var card = new zingame.Card(rank, suit);
-  
-  var cardName = rank + "_" + zingame.Constants.CARD_PRIORITY[suit];
+
+zingame.Card.prototype.fill = function() {
+  var cardName = this.rank + "_" + zingame.Constants.CARD_PRIORITY[this.suit - 1];
   var img = zingame.Resources.img[cardName] ;
-  card.setFill(img).setSize(zingame.Constants.CARD_WIDTH, zingame.Constants.CARD_HEIGHT);
-  return card;
+  this.setFill(img).setSize(zingame.Constants.CARD_WIDTH, zingame.Constants.CARD_HEIGHT);
+  return this;
 };
